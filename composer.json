@@ -1,0 +1,12 @@
+{
+    "name": "marco-c/web-app-manifest-generator",
+    "description": "Web App Manifest generator class for WordPress plugins.",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "Marco Castelluccio",
+            "email": "mcastelluccio@mozilla.com"
+        }
+    ],
+    "require": {}
+}
