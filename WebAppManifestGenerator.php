@@ -1,5 +1,9 @@
 <?php
 
+if (class_exists('WebAppManifestGenerator')) {
+  return;
+}
+
 class WebAppManifestGenerator {
   private static $instance;
   private $fields = array(
