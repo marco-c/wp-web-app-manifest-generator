@@ -22,7 +22,7 @@ if (!class_exists('WebAppManifestGenerator')) {
     }
 
     public function add_manifest() {
-      echo '<link rel="manifest" href="' . home_url('/', 'https') . '?webappmanifest_file=manifest">';
+      echo '<link rel="manifest" href="' . home_url('/', 'relative') . '?webappmanifest_file=manifest">';
     }
 
     public function on_query_vars($qvars) {
