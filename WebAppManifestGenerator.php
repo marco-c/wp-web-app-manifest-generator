@@ -32,7 +32,7 @@ if (!class_exists('WebAppManifestGenerator')) {
       $this->fields[$key] = $value;
     }
 
-    public function manifestJSONGenerator($query) {
+    public function manifestJSONGenerator() {
       return array(
         'content' => wp_json_encode($this->fields),
         'contentType' => 'application/json',
