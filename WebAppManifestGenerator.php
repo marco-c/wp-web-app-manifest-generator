@@ -12,8 +12,7 @@ if (!class_exists('WebAppManifestGenerator')) {
     public function __construct() {
       add_action('wp_head', array($this, 'add_manifest'));
 
-      $wpServeFile = WP_Serve_File::getInstance();
-      $wpServeFile->add_file('manifest.json', array($this, 'manifestJSONGenerator'));
+      WP_Serve_File::getInstance()->add_file('manifest.json', array($this, 'manifestJSONGenerator'));
     }
 
     public static function getInstance() {
@@ -26,6 +25,10 @@ if (!class_exists('WebAppManifestGenerator')) {
 
     public function add_manifest() {
       echo '<link rel="manifest" href="' . WP_Serve_File::get_relative_to_host_root_url('manifest.json') . '">';
+    }
+
+    public function regenerate_manifest() {
+      WP_Serve_File::getInstance()->invalidate_files(array('manifest.json'));
     }
 
     public function set_field($key, $value) {
