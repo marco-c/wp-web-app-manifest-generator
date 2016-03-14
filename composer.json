@@ -8,5 +8,13 @@
             "email": "mcastelluccio@mozilla.com"
         }
     ],
-    "require": {}
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/marco-c/WP_Serve_File"
+        }
+    ],
+    "require": {
+        "marco-c/WP_Serve_File": "dev-master"
+    }
 }
