@@ -1,5 +1,7 @@
 <?php
 
+require_once(plugin_dir_path(__FILE__) . 'vendor/marco-c/WP_Serve_File/class-wp-serve-file.php');
+
 if (!class_exists('WebAppManifestGenerator')) {
   class WebAppManifestGenerator {
     private static $instance;
@@ -9,8 +11,9 @@ if (!class_exists('WebAppManifestGenerator')) {
 
     public function __construct() {
       add_action('wp_head', array($this, 'add_manifest'));
-      add_filter('query_vars', array($this, 'on_query_vars'), 10, 1);
-      add_action('parse_request', array($this, 'on_parse_request'));
+
+      $wpServeFile = WP_Serve_File::getInstance();
+      $wpServeFile->add_file('manifest.json', array($this, 'manifestJSONGenerator'));
     }
 
     public static function getInstance() {
@@ -22,28 +25,18 @@ if (!class_exists('WebAppManifestGenerator')) {
     }
 
     public function add_manifest() {
-      echo '<link rel="manifest" href="' . home_url('/', 'relative') . '?webappmanifest_file=manifest">';
-    }
-
-    public function on_query_vars($qvars) {
-      $qvars[] = 'webappmanifest_file';
-      return $qvars;
+      echo '<link rel="manifest" href="' . WP_Serve_File::get_relative_to_host_root_url('manifest.json') . '">';
     }
 
     public function set_field($key, $value) {
       $this->fields[$key] = $value;
     }
 
-    public function on_parse_request($query) {
-      if (!array_key_exists('webappmanifest_file', $query->query_vars)) {
-        return;
-      }
-
-      $file = $query->query_vars['webappmanifest_file'];
-
-      if ($file === 'manifest') {
-        wp_send_json($this->fields);
-      }
+    public function manifestJSONGenerator($query) {
+      return array(
+        'content' => wp_json_encode($this->fields),
+        'contentType' => 'application/json',
+      );
     }
   }
 }
