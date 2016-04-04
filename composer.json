@@ -11,5 +11,10 @@
     "require": {
         "marco-c/wp_serve_file": "dev-master"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4" : {
+            "Mozilla\\" : ""
+        }
+    }
 }

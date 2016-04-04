@@ -1,6 +1,6 @@
 <?php
 
-require_once(plugin_dir_path(__FILE__) . '../../marco-c/wp_serve_file/class-wp-serve-file.php');
+namespace Mozilla;
 
 if (!class_exists('WebAppManifestGenerator')) {
   class WebAppManifestGenerator {
