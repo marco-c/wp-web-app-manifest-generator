@@ -11,5 +11,8 @@
     "require": {
         "marco-c/wp_serve_file": "dev-master"
     },
+    "autoload": {
+      "classmap": [ "src/" ]
+    },
     "minimum-stability": "dev"
 }
