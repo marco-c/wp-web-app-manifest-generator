@@ -1,0 +1,48 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "d9c3b44ce8b3e4587fd7801e047af885",
+    "packages": [
+        {
+            "name": "marco-c/wp_serve_file",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/marco-c/WP_Serve_File.git",
+                "reference": "3240b22d9399fd12f2efb754e34c8bcf008f8300"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/marco-c/WP_Serve_File/zipball/3240b22d9399fd12f2efb754e34c8bcf008f8300",
+                "reference": "3240b22d9399fd12f2efb754e34c8bcf008f8300",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Castelluccio",
+                    "email": "mcastelluccio@mozilla.com"
+                }
+            ],
+            "description": "Class to serve dynamic files in WordPress with performance in mind.",
+            "time": "2016-04-04 10:07:44"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "marco-c/wp_serve_file": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
