@@ -1,5 +1,7 @@
 <?php
 
+namespace Mozilla;
+
 if (!class_exists('WebAppManifestGenerator')) {
   class WebAppManifestGenerator {
     private static $instance;
