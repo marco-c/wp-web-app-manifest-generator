@@ -37,7 +37,7 @@ if (!class_exists('WebAppManifestGenerator')) {
 
     public function manifestJSONGenerator() {
       return array(
-        'content' => wp_json_encode($this->fields),
+        'content' => json_encode($this->fields),
         'contentType' => 'application/json',
       );
     }
