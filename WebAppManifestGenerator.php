@@ -38,7 +38,7 @@ if (!class_exists('WebAppManifestGenerator')) {
     public function manifestJSONGenerator() {
       return array(
         'content' => json_encode($this->fields),
-        'contentType' => 'application/json',
+        'contentType' => 'application/manifest+json',
       );
     }
   }
